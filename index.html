@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rekisteröitymislomake</title>
+</head>
+
+<body>
+    <div class="otsikko">
+    <h1>Rekisteröitymislomake</h1>
+    <p><b>Siirry kentästä toiseen tab-näppäimellä.</b></p>
+    </div>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="vasen">
+                    <label for="user_id">Käyttäjä ID:</label>
+                </div>
+                <div class="oikea">
+                    <input type="text" name="user_id" id="user_id" size="10">
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="salasana">Salasana:</label>
+                </div>
+                <div class="oikea">
+                    <input type="text" name="salasana" id="salasana" size="10">
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="nimi">Nimi:</label>
+                </div>
+                <div class="oikea">
+                    <input type="text" name="nimi" id="nimi" size="40">
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="osoite">Osoite:</label>
+                </div>
+                <div class="oikea">
+                    <input type="text" name="osoite" id="osoite" size="40">
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="valinta">Maa:</label>
+                </div>
+                <div class="oikea">
+                    <select name="valinta" id="valinta">
+                        <option value="none" selected disabled hidden>(Valitse maa)</option>
+                        <option value="Suomi" id="suomi">Suomi</option>
+                        <option value="Ruotsi" id="ruotsi">Ruotsi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="pnro">Postinumero:</label>
+                </div>
+                <div class="oikea">
+                    <input type="text" name="pnro" id="pnro" size="20">
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="sposti">Sähköposti:</label>
+                </div>
+                <div class="oikea">
+                    <input type="text" name="sposti" id="sposti" size="40">
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label>Sukupuoli:</label>
+                </div>
+                <div class="oikea">
+                    <input type="radio" name="sukupuoli" id="mies">
+                    <label for="mies">Mies</label>
+                    <input type="radio" name="sukupuoli" id="nainen">
+                    <label for="nainen">Nainen</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label>Kieli:</label>
+                </div>
+                <div class="oikea">
+                    <input type="checkbox" name="kieli_suomi" id="kieli_suomi">
+                    <label for="kieli_suomi">Suomi</label>
+                    <input type="checkbox" name="kieli_muu" id="kieli_muu">
+                    <label for="kieli_muu">Muu kuin suomi</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    <label for="lisatietoja">Lisätietoja:</label>
+                </div>
+                <div class="oikea">
+                    <textarea name="lisatietoja" id="lisatietoja" cols="42" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="vasen">
+                    
+                </div>
+                <div class="oikea">
+                    <button id="laheta">Lähetä</button>
+                    <button id="tyhjenna">Tyhjennä</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

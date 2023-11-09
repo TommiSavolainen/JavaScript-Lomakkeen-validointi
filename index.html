@@ -20,7 +20,8 @@
                     <label for="user_id">Käyttäjä ID:</label>
                 </div>
                 <div class="oikea">
-                    <input type="text" name="user_id" id="user_id" size="10">
+                    <input type="text" name="user_id" id="user_id" size="10" minlength="6" required>
+                    <span id="id_msg"></span>
                 </div>
             </div>
             <div class="row">
@@ -53,10 +54,11 @@
                 </div>
                 <div class="oikea">
                     <select name="valinta" id="valinta">
-                        <option value="none" selected disabled hidden>(Valitse maa)</option>
+                        <option value="none" selected disabled>(Valitse maa)</option>
                         <option value="Suomi" id="suomi">Suomi</option>
                         <option value="Ruotsi" id="ruotsi">Ruotsi</option>
                     </select>
+                    <span id="maa_msg"></span>
                 </div>
             </div>
             <div class="row">
@@ -65,6 +67,7 @@
                 </div>
                 <div class="oikea">
                     <input type="text" name="pnro" id="pnro" size="20">
+                    <span id="postinro_msg"></span>
                 </div>
             </div>
             <div class="row">
@@ -84,6 +87,7 @@
                     <label for="mies">Mies</label>
                     <input type="radio" name="sukupuoli" id="nainen">
                     <label for="nainen">Nainen</label>
+                    <span id="sukupuoli_msg"></span>
                 </div>
             </div>
             <div class="row">
@@ -95,6 +99,7 @@
                     <label for="kieli_suomi">Suomi</label>
                     <input type="checkbox" name="kieli_muu" id="kieli_muu">
                     <label for="kieli_muu">Muu kuin suomi</label>
+                    <span id="kieli_msg"></span>
                 </div>
             </div>
             <div class="row">
@@ -116,6 +121,7 @@
             </div>
         </form>
     </div>
+    <script src="main.js"></script>
 </body>
 
 </html>

@@ -11,8 +11,9 @@ function lahetaLomakeTarkistus(event) {
     let maa = document.getElementById('valinta').selectedIndex;
     let maaMsg = document.getElementById('maa_msg');
     let postinro = document.getElementById('pnro');
-    let sahkoposti = document.getElementById('sposti');
     let postiNroMsg = document.getElementById('postinro_msg');
+    let sahkoposti = document.getElementById('sposti');
+    let spostiMsg = document.getElementById('sposti_msg');
     let sukupuoliM = document.getElementById('mies').checked;
     let sukupuoliN = document.getElementById('nainen').checked;
     let sukupuoliMsg = document.getElementById('sukupuoli_msg');
@@ -21,13 +22,15 @@ function lahetaLomakeTarkistus(event) {
     let kieliMsg = document.getElementById('kieli_msg');
     postiNroMsg.innerText = ''
 
+    ValidateEmail(sahkoposti, spostiMsg);
+
     if (!kieliM && !kieliS) {
         kieliMsg.style.color = 'red';
         kieliMsg.innerText = '* Kieli ei valittu!';
     } else {
         kieliMsg.innerText = '';
     }
-    
+
     if (!sukupuoliM && !sukupuoliN) {
         sukupuoliMsg.style.color = 'red';
         sukupuoliMsg.innerText = '* Sukupuoli ei valittu!';
@@ -73,7 +76,7 @@ function lahetaLomakeTarkistus(event) {
     if (postinro.value == '') {
         postinro.style.color = 'red';
         postinro.value = '* vaadittu kenttä';
-    } else if (isNaN(postinro.value) || postinro.value.length != 5){
+    } else if (isNaN(postinro.value) || postinro.value.length != 5) {
         postiNroMsg.style.color = 'red';
         postiNroMsg.innerText = '* postinumero täytyy olla numeroita ja 5 merkkiä pitkä'
     } else {
@@ -88,6 +91,17 @@ function lahetaLomakeTarkistus(event) {
     sahkoposti.addEventListener('click', vaihdaVari);
 }
 
+function ValidateEmail(inputText, spostiMsg) {
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (inputText.value.match(mailformat)) {
+        return true;
+    } else {
+        spostiMsg.style.color = 'red';
+        spostiMsg.innerText = '* Syötä sähköposti oikeassa muodossa';
+        return false;
+    }
+}
+
 function vaihdaVari(event) {
     event.target.style.color = 'black';
     event.target.value = '';
@@ -99,15 +113,22 @@ tyhjenna.addEventListener('click', tyhjennaLomake);
 function tyhjennaLomake(event) {
     event.preventDefault();
     document.getElementById('user_id').value = '';
+    document.getElementById('user_id').style.color = 'black';
     document.getElementById('id_msg').innerText = '';
     document.getElementById('salasana').value = '';
+    document.getElementById('salasana').style.color = 'black';
     document.getElementById('nimi').value = '';
+    document.getElementById('nimi').style.color = 'black';
     document.getElementById('osoite').value = '';
+    document.getElementById('osoite').style.color = 'black';
     document.getElementById('valinta').selectedIndex = 0;
-    document.getElementById('maa_msg').innerText = ''
+    document.getElementById('maa_msg').innerText = '';
     document.getElementById('pnro').value = '';
+    document.getElementById('pnro').style.color = 'black';
     document.getElementById('postinro_msg').innerText = ''
     document.getElementById('sposti').value = '';
+    document.getElementById('sposti').style.color = 'black';
+    document.getElementById('sposti_msg').innerText = '';
     document.getElementById('mies').checked = false;
     document.getElementById('nainen').checked = false;
     document.getElementById('sukupuoli_msg').innerText = '';
